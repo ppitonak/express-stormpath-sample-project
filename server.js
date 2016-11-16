@@ -1,5 +1,6 @@
 'use strict';
 
+var cookieParser = require('cookie-parser');
 var express = require('express');
 var stormpath = require('express-stormpath');
 
@@ -17,6 +18,7 @@ app.set('trust proxy',true);
 app.set('view engine', 'jade');
 app.set('views', './lib/views');
 app.locals.siteName = 'Express-Stormpath Example Project';
+app.use(cookieParser());
 
 /**
  * Stormpath initialization.
